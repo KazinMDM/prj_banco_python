@@ -6,6 +6,8 @@ def menu():
         print("1 - Deposito")
         print("2 - Saque")
         print("3 - Extrato")
+        print("4 - Transferencia")
+        print
         print("0 - Sair")
 
         opcao = int(input("Digite a opção desejada: "))
