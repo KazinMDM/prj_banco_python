@@ -1,8 +1,16 @@
 import os
+import json
 from cadastro import Pessoa
+from saque import Saque
+from deposito import Deposito
 
-# from saque import Saque
-
+def autenticar(nome, senha, arquivo="cadastro.json"):
+    if os.path.exists(arquivo):
+        with open(arquivo, "r", encoding="utf-8") as f:
+            dados = json.load(f)
+            if nome in dados and dados[nome]["senha"] == senha:
+                return True
+    return False
 
 def menu():
     while True:
@@ -14,17 +22,17 @@ def menu():
         print("3 - Extrato")
         print("0 - Sair")
 
-        # opcao = int(input("Digite a opção desejada: "))
-        # if opcao == 1:
-            
-        # elif opcao == 2:
-            
+        opcao = int(input("Digite a opção desejada: "))
+        if opcao == 1:
+            Deposito.depositar()
+        elif opcao == 2:
+            Saque.saque()
         # elif opcao == 3:
             
         # elif opcao == 4:
             
-        # elif opcao == 0:
-        #     break
+        elif opcao == 0:
+            break
 
 def menu_inicial():
     while True:
@@ -39,10 +47,10 @@ def menu_inicial():
         elif opcao == 2:
             nome = input("Digite o nome: ")
             senha = input("Digite a senha: ")
-            if Pessoa.autenticar(nome, senha):
+            if autenticar(nome, senha) == True:
                 menu()
             else:
-                print("Nome ou senha incorretos")
+                print("Nome ou senha incorretos. Tente novamente.")
         elif opcao == 0:
             break
 

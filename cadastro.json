@@ -12,5 +12,19 @@
             "estado": "Bahia"
         },
         "saldo": 0.0
+    },
+    {
+        "nome": "Maria",
+        "data_nasc": "01/02/1993",
+        "cpf": "13245678900",
+        "senha": "234567",
+        "endereco": {
+            "rua": "não sei",
+            "numero": 12,
+            "bairro": "faz favô",
+            "cep": "67890-000",
+            "estado": "Califórnia"
+        },
+        "saldo": 0.0
     }
 ]
