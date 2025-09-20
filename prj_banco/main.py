@@ -1,6 +1,8 @@
 import os
 from cadastro import Pessoa
 
+# from saque import Saque
+
 
 def menu():
     while True:
@@ -12,10 +14,17 @@ def menu():
         print("3 - Extrato")
         print("0 - Sair")
 
-        opcao = int(input("Digite a opção desejada: "))
-        if opcao != int:
-            print("Opção inválida")
-            menu()
+        # opcao = int(input("Digite a opção desejada: "))
+        # if opcao == 1:
+            
+        # elif opcao == 2:
+            
+        # elif opcao == 3:
+            
+        # elif opcao == 4:
+            
+        # elif opcao == 0:
+        #     break
 
 def menu_inicial():
     while True:
@@ -28,9 +37,12 @@ def menu_inicial():
         if opcao == 1:
             Pessoa.cadastro()
         elif opcao == 2:
-            
-        elif opcao == 3:
-            extrato()
+            nome = input("Digite o nome: ")
+            senha = input("Digite a senha: ")
+            if Pessoa.autenticar(nome, senha):
+                menu()
+            else:
+                print("Nome ou senha incorretos")
         elif opcao == 0:
             break
 

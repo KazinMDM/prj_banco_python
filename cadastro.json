@@ -1,0 +1,16 @@
+[
+    {
+        "nome": "Kayke",
+        "data_nasc": "05/12/2008",
+        "cpf": "12345678900",
+        "senha": "123456",
+        "endereco": {
+            "rua": "Rua da Água",
+            "numero": 77,
+            "bairro": "Fim do Mundo",
+            "cep": "12345-400",
+            "estado": "Bahia"
+        },
+        "saldo": 0.0
+    }
+]
