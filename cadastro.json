@@ -39,6 +39,10 @@
             "cep": "55555-111",
             "estado": "ba"
         },
+<<<<<<< HEAD
+        "saldo": 1650.0
+=======
         "saldo": 1200.5
+>>>>>>> 9ce44e6bc0f4bc0ea56eec485bedcb9966cee365
     }
 ]
