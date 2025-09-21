@@ -11,34 +11,6 @@
             "cep": "12345-400",
             "estado": "Bahia"
         },
-        "saldo": 651.5
-    },
-    {
-        "nome": "Maria",
-        "data_nasc": "01/02/1993",
-        "cpf": "13245678900",
-        "senha": "234567",
-        "endereco": {
-            "rua": "não sei",
-            "numero": 12,
-            "bairro": "faz favô",
-            "cep": "67890-000",
-            "estado": "Califórnia"
-        },
-        "saldo": 1000000.0
-    },
-    {
-        "nome": "Zezin",
-        "data_nasc": "15/08/2008",
-        "cpf": "98765432100",
-        "senha": "123456",
-        "endereco": {
-            "rua": "v",
-            "numero": 2,
-            "bairro": "ag 10",
-            "cep": "55555-111",
-            "estado": "ba"
-        },
-        "saldo": 1650.0
+        "saldo": 551.5
     }
 ]
