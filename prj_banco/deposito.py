@@ -1,18 +1,54 @@
+import os
+import json
+import time
+
 class Deposito:
-    def __init__(self, saldo=0):
-        self.saldo = saldo
-
-    def depositar(self, valor):
-        """Deposita um valor positivo e atualiza o saldo."""
-        if valor > 0:
-            self.saldo += valor          
-            print("=== Depósito realizado com sucesso! ===\n")
-            print(f"=== Você depositou {valor} R$ ===\n")  
-            print(f"=== Saldo atual: {self.saldo} R$ ===\n")
-        else:
-            print("=== Operação falhou! O valor informado é inválido. ===\n")
-
-
-# d = Deposito()   
-# d.depositar(float(input("Digite o valor a ser depositado: ")))
-# só retire o comentário caso vc retirar esse objeto que você criou e o input, ta entranto antes do main.
+    def __init__(self, arquivo_json="cadastro.json"):
+        self.arquivo_json = arquivo_json
+        self.dados = self.carregar_dados()
+    
+    def carregar_dados(self):
+        try:
+            with open(self.arquivo_json, "r", encoding="utf-8") as arquivo:
+                dados = json.load(arquivo)
+                return dados
+        except FileNotFoundError:
+            return []
+    
+    def salvar_dados(self, dados):
+        with open(self.arquivo_json, "w", encoding="utf-8") as arquivo:
+            json.dump(dados, arquivo, ensure_ascii=False, indent=4)
+            arquivo.close()
+        print("Dados salvos com sucesso!")
+    
+    
+    def depositar(self):
+        print("Saldo atual:", pessoa["deposito"])
+        valor_deposito = float(input("Digite o valor do deposito "))
+        time.sleep(1)
+        senha_correta = input("Digite a senha correta: ")
+        while True:
+            pessoa_encontrada = False
+            for pessoa in self.dados:
+                if pessoa["senha"] == senha_correta:
+                    pessoa_encontrada = True
+                    break
+            if pessoa_encontrada:
+                break
+            else:
+                print("Senha incorreta. Tente novamente.")
+                senha_correta = input("Digite a senha correta: ")
+        time.sleep(2)
+        print("Dados encontrados com sucesso!")
+        time.sleep(1)
+        print("Realizando deposito...")
+        time.sleep(1)
+        for pessoa in self.dados:
+            pessoa["deposito"] -= valor_deposito
+            time.sleep(1)
+            print("Deposito realizado com sucesso!")
+            time.sleep(1)
+            print("Saldo atual:", pessoa["saldo"])
+            self.salvar_dados(self.dados)
+            return True
+            

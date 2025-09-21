@@ -4,6 +4,7 @@ from cadastro import Pessoa
 from saque import Saque
 from deposito import Deposito
 
+
 def autenticar(nome, senha, arquivo="cadastro.json"):
     if os.path.exists(arquivo):
         with open(arquivo, "r", encoding="utf-8") as f:
@@ -26,7 +27,7 @@ def menu():
 
         opcao = int(input("Digite a opção desejada: "))
         if opcao == 1:
-            deposito=Deposito()
+            deposito=deposito.depositar()
     
         elif opcao == 2:
             saque=Saque()
