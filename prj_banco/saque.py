@@ -1,56 +1,69 @@
 import os
 import json
 import time
+import datetime
 
 class Saque:
-    def __init__(self, arquivo_json="cadastro.json"):
+    def __init__(self, nome, arquivo_json="cadastro.json"):
+        self.nome = nome
         self.arquivo_json = arquivo_json
         self.dados = self.carregar_dados()
     
     def carregar_dados(self):
         try:
             with open(self.arquivo_json, "r", encoding="utf-8") as arquivo:
-                dados = json.load(arquivo)
-                return dados
+                return json.load(arquivo)
         except FileNotFoundError:
             return []
     
     def salvar_dados(self, dados):
         with open(self.arquivo_json, "w", encoding="utf-8") as arquivo:
             json.dump(dados, arquivo, ensure_ascii=False, indent=4)
-            arquivo.close()
         print("Dados salvos com sucesso!")
-    
     
     def sacar(self):
         valor_saque = float(input("Digite o valor do saque: "))
         time.sleep(1)
-        senha_correta = input("Digite a senha correta: ")
-        while True:
-            pessoa_encontrada = False
-            for pessoa in self.dados:
-                if pessoa["senha"] == senha_correta:
-                    pessoa_encontrada = True
-                    break
-            if pessoa_encontrada:
+
+        # localizar o usuário pelo nome
+        pessoa_encontrada = None
+        for pessoa in self.dados:
+            if pessoa["nome"] == self.nome:
+                pessoa_encontrada = pessoa
                 break
-            else:
-                print("Senha incorreta. Tente novamente.")
-                senha_correta = input("Digite a senha correta: ")
-        time.sleep(2)
+
+        if pessoa_encontrada is None:
+            print("Usuário não encontrado!")
+            return False
+        
+        # valida senha até acertar
+        senha_usuario = input("Digite a senha correta: ")
+        while senha_usuario != pessoa_encontrada["senha"]:
+            print("Senha incorreta. Tente novamente.")
+            senha_usuario = input("Digite a senha correta: ")
+
+        time.sleep(1)
         print("Dados encontrados com sucesso!")
         time.sleep(1)
         print("Realizando saque...")
         time.sleep(1)
-        for pessoa in self.dados:
-            if pessoa["saldo"] >= valor_saque:
-                pessoa["saldo"] -= valor_saque
-                time.sleep(1)
-                print("Saque realizado com sucesso!")
-                time.sleep(1)
-                print("Saldo atual:", pessoa["saldo"])
-                self.salvar_dados(self.dados)
-                return True
-            else:
-                print("Saldo insuficiente para saque.")
-                return False
+
+        # verificar saldo
+        if pessoa_encontrada["saldo"] >= valor_saque:
+            pessoa_encontrada["saldo"] -= valor_saque
+
+            # registrar extrato
+            movi_saque = {
+                "tipo": "Saque",
+                "data": datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+                "valor": -valor_saque
+            }
+            pessoa_encontrada["extrato"].append(movi_saque)
+
+            self.salvar_dados(self.dados)
+            print("Saque realizado com sucesso!")
+            print("Saldo atual:", pessoa_encontrada["saldo"])
+            return True
+        else:
+            print("Saldo insuficiente para saque.")
+            return False

@@ -4,7 +4,7 @@ import time
 
 class Dados:
     def __init__(self, nome, arquivo_json="cadastro.json"):
-        self.nome = nome  # <-- guarda o nome do usuário logado
+        self.nome = nome 
         self.arquivo_json = arquivo_json
         self.dados = self.carregar_dados()
 

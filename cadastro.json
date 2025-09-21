@@ -3,42 +3,57 @@
         "nome": "Kayke",
         "data_nasc": "05/12/2008",
         "cpf": "12345678900",
-        "senha": "654321",
+        "senha": "123456",
         "endereco": {
             "rua": "Rua da Água",
-            "numero": 77,
-            "bairro": "Fim do Mundo",
-            "cep": "12345-400",
-            "estado": "Bahia"
-        },
-        "saldo": 551.5
-    },
-    {
-        "nome": "Maria",
-        "data_nasc": "01/02/1993",
-        "cpf": "13245678900",
-        "senha": "234567",
-        "endereco": {
-            "rua": "não sei",
             "numero": 12,
             "bairro": "faz favô",
-            "cep": "67890-000",
-            "estado": "Califórnia"
+            "cep": "12345-000",
+            "estado": ""
         },
-        "saldo": 1000000.0
+        "saldo": 340.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "21/09/2025 19:39:13",
+                "valor": 200.0
+            },
+            {
+                "tipo": "Depósito",
+                "data": "21/09/2025 19:40:11",
+                "valor": 200.0
+            },
+            {
+                "tipo": "Depósito",
+                "data": "21/09/2025 19:54:06",
+                "valor": 120.0
+            },
+            {
+                "tipo": "Saque",
+                "data": "21/09/2025 20:06:54",
+                "valor": -180.0
+            }
+        ]
     },
     {
         "nome": "Zezin",
         "data_nasc": "15/08/2008",
         "cpf": "98765432100",
-        "senha": "123456",
+        "senha": "654321",
         "endereco": {
-            "rua": "v",
-            "numero": 2,
-            "bairro": "ag 10",
-            "cep": "55555-111",
-            "estado": "ba"
+            "rua": "num sei",
+            "numero": 11,
+            "bairro": "num sei",
+            "cep": "98765-000",
+            "estado": "califórnia"
         },
-        "saldo": 1650.0
+        "saldo": 200.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "21/09/2025 19:46:47",
+                "valor": 100.0
+            }
+        ]
     }
 ]

@@ -1,9 +1,11 @@
 import os
 import json
 import time
+import datetime
 
 class Deposito:
-    def __init__(self, arquivo_json="cadastro.json"):
+    def __init__(self, nome,arquivo_json="cadastro.json"):
+        self.nome = nome
         self.arquivo_json = arquivo_json
         self.dados = self.carregar_dados()
     
@@ -23,31 +25,35 @@ class Deposito:
     
     
     def depositar(self):
-        valor_deposito = float(input("Digite o valor do deposito "))
+        valor_deposito = float(input("Digite o valor do deposito: "))
         time.sleep(1)
-        senha_correta = input("Digite a senha correta: ")
-        while True:
-            pessoa_encontrada = False
+        senha_usuario = input("Digite a senha correta: ")
+
+        pessoa_encontrada = None
+        while pessoa_encontrada is None:
             for pessoa in self.dados:
-                if pessoa["senha"] == senha_correta:
-                    pessoa_encontrada = True
-                    break
-            if pessoa_encontrada:
-                break
-            else:
-                print("Senha incorreta. Tente novamente.")
-                senha_correta = input("Digite a senha correta: ")
+                if pessoa["nome"] == self.nome:
+                    if pessoa["senha"] == senha_usuario:
+                        pessoa_encontrada = pessoa  
+                        break
+                    else:
+                        print("Senha incorreta. Tente novamente.")
+                        senha_usuario = input("Digite a senha correta: ")
+
         time.sleep(2)
         print("Dados encontrados com sucesso!")
         time.sleep(1)
         print("Realizando deposito...")
         time.sleep(1)
-        for pessoa in self.dados:
-            pessoa["saldo"] += valor_deposito
-            time.sleep(1)
-            print("Deposito realizado com sucesso!")
-            time.sleep(1)
-            print("Saldo atual:", pessoa["saldo"])
-            self.salvar_dados(self.dados)
-            return True
-            
+        pessoa_encontrada["saldo"] += valor_deposito
+
+        movi_deposito = {
+            "tipo": "Depósito",
+            "data": datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            "valor": valor_deposito
+        }
+
+        pessoa_encontrada["extrato"].append(movi_deposito)
+        self.salvar_dados(self.dados)
+        print("Deposito realizado com sucesso!")
+        print("Saldo atual:", pessoa_encontrada["saldo"])

@@ -34,10 +34,10 @@ def menu(nome):
 
         opcao = int(input("Digite a opção desejada: "))
         if opcao == 1:
-            deposito=Deposito()
+            deposito=Deposito(nome)
             deposito.depositar()
         elif opcao == 2:
-            saque=Saque()
+            saque=Saque(nome)
             saque.sacar()
         elif opcao == 3:
             transferencia=Transferencia()
@@ -64,7 +64,7 @@ def menu_inicial():
         if opcao == 1:
             Pessoa.cadastro()
         elif opcao == 2:
-            nome = input("Digite o nome: ")
+            nome = input("Digite o nome: ").capitalize()
             senha = input("Digite a senha: ")
             verificar = autenticar(nome, senha)
             if verificar == True:
@@ -74,7 +74,7 @@ def menu_inicial():
                 print("Nome ou senha incorretos. Tente novamente.")
         elif opcao == 0:
             time.sleep(2)
-            print("Saída encerrada com sucesso!")
+            print("Saída efetuada com sucesso!")
             break
 
 if __name__ == "__main__":

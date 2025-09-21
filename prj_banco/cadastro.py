@@ -53,7 +53,8 @@ class Pessoa:
                 "cep": cep,
                 "estado": estado
             },
-            "saldo": 0.0
+            "saldo": 0.0,
+            "extrato": []
             }
         pessoas = cls.carregar_pessoas()
         pessoas.append(pessoa)
