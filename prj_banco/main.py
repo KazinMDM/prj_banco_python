@@ -4,6 +4,7 @@ from cadastro import Pessoa
 from saque import Saque
 from deposito import Deposito
 from saldo import Saldo
+import time
 
 
 
@@ -39,6 +40,7 @@ def menu():
         elif opcao == 4:
             saldo=Saldo()
         elif opcao == 0:
+            time.sleep(2)
             print("Sessão encerrada com sucesso!")
             break
 
@@ -61,6 +63,7 @@ def menu_inicial():
             else:
                 print("Nome ou senha incorretos. Tente novamente.")
         elif opcao == 0:
+            time.sleep(2)
             print("Saída encerrada com sucesso!")
             break
 
