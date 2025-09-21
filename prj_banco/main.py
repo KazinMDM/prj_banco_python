@@ -26,7 +26,7 @@ def menu():
         print("4 - Saldo")
         print("3 - Extrato")
         print("0 - Sair")
-        
+
         opcao = int(input("Digite a opção desejada: "))
         if opcao == 1:
             deposito=Deposito()
@@ -37,7 +37,7 @@ def menu():
         # elif opcao == 3:
             
         elif opcao == 4:
-            saldo=Saldo(input("Confirme seu nome: "))
+            saldo=Saldo()
         elif opcao == 0:
             print("Sessão encerrada com sucesso!")
             break

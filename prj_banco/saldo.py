@@ -2,10 +2,11 @@ import json
 import os
 
 class Saldo:
-    def __init__(self, nome, arquivo_json="cadastro.json"):
+    def __init__(self, arquivo_json="cadastro.json"):
         self.arquivo_json = arquivo_json
         self.dados = self.carregar_pessoas()
-        self.nome = nome
+        self.nome = input("Digite o nome da pessoa: ")
+        self.visualizar_saldo()
 
     def carregar_pessoas(self):
         if os.path.exists(self.arquivo_json):
@@ -14,8 +15,9 @@ class Saldo:
         return []
 
     def visualizar_saldo(self):
-        for pessoa in self.dados:
-            if pessoa["nome"] == self.nome:
-                print(f"Saldo atual de {self.nome}: R$ {pessoa['saldo']:.2f}")
-                return
-        print("Conta não encontrada.")
+        try:
+            for pessoa in self.dados:
+                if pessoa["nome"] == self.nome:
+                    print(f"Saldo atual de {self.nome}: R$ {pessoa['saldo']:.2f}")
+        except:
+            print("Conta não encontrada.")
