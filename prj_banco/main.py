@@ -3,6 +3,8 @@ import json
 from cadastro import Pessoa
 from saque import Saque
 from deposito import Deposito
+from saldo import Saldo
+
 
 def autenticar(nome, senha, arquivo="cadastro.json"):
     if os.path.exists(arquivo):
@@ -33,8 +35,8 @@ def menu():
             saque.sacar()
         # elif opcao == 3:
             
-        # elif opcao == 4:
-            
+        elif opcao == 4:
+            saldo=Saldo(input("Confirme seu nome: "))
         elif opcao == 0:
             print("Sessão encerrada com sucesso!")
             break
