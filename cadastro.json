@@ -3,7 +3,7 @@
         "nome": "Kayke",
         "data_nasc": "05/12/2008",
         "cpf": "12345678900",
-        "senha": "123456",
+        "senha": "654321",
         "endereco": {
             "rua": "Rua da Água",
             "numero": 77,
@@ -11,7 +11,11 @@
             "cep": "12345-400",
             "estado": "Bahia"
         },
+<<<<<<< HEAD
         "saldo": 1000444.5
+=======
+        "saldo": 551.5
+>>>>>>> 06d459fa6f6c0bd6218324fa3451f59da290fa05
     },
     {
         "nome": "Maria",
@@ -25,7 +29,7 @@
             "cep": "67890-000",
             "estado": "Califórnia"
         },
-        "saldo": 0.0
+        "saldo": 1000000.0
     },
     {
         "nome": "Zezin",

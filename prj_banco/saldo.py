@@ -2,10 +2,10 @@ import json
 import os
 
 class Saldo:
-    def __init__(self, arquivo_json="cadastro.json"):
+    def __init__(self, nome,arquivo_json="cadastro.json"):
         self.arquivo_json = arquivo_json
         self.dados = self.carregar_pessoas()
-        self.nome = input("confirme seus dados [Insira seu nome]:\n-->")
+        self.nome = nome
         self.visualizar_saldo()
 
     def carregar_pessoas(self):
