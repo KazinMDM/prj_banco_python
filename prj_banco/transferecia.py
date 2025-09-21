@@ -8,7 +8,6 @@ class Transferencia:
         self.dados = self.carregar_dados()
 
     def carregar_dados(self):
-        """Carrega os dados do arquivo JSON."""
         if os.path.exists(self.arquivo_json):
             with open(self.arquivo_json, "r", encoding="utf-8") as f:
                 try:
@@ -18,17 +17,14 @@ class Transferencia:
         return []
 
     def salvar_dados(self):
-        """Salva os dados atualizados no arquivo JSON."""
         with open(self.arquivo_json, "w", encoding="utf-8") as f:
             json.dump(self.dados, f, ensure_ascii=False, indent=4)
         print("Dados salvos com sucesso!")
 
     def transferir(self):
-        """Realiza transferência entre dois usuários."""
         print("\n=== Transferência Bancária ===")
 
-        # Identificação do remetente
-        senha_origem = input("Digite sua senha (usuário/remetente): ")
+        senha_origem = input("Digite sua senha de acesso: ")
         remetente = None
         for pessoa in self.dados:
             if pessoa["senha"] == senha_origem:
@@ -36,9 +32,9 @@ class Transferencia:
                 break
 
         if not remetente:
-            print("Usuário remetente não encontrado ou senha incorreta.")
+            print("Usuário não encontrado ou senha incorreta.")
             return False
-        print(f"Remetente: {remetente['nome']} - Saldo atual: R$ {remetente['saldo']:.2f}")
+        print(f"Remetente: {remetente['nome']} - Saldo atual: R$ {remetente['saldo']}")
 
         nome_destinatario = input("Digite o nome do destinatário: ").capitalize()
         destinatario = None
@@ -72,8 +68,7 @@ class Transferencia:
 
         self.salvar_dados()
 
-        print(f"\nTransferência de R$ {valor:.2f} realizada com sucesso!")
-        print(f"Novo saldo de {remetente['nome']}: R$ {remetente['saldo']:.2f}")
-        print(f"Novo saldo de {destinatario['nome']}: R$ {destinatario['saldo']:.2f}")
+        print(f"\nTransferência de R$ {valor} realizada com sucesso!")
+        print(f"Novo saldo de {remetente['nome']}: R$ {remetente['saldo']}")
 
         return True
