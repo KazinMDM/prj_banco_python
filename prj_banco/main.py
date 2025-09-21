@@ -4,6 +4,7 @@ from cadastro import Pessoa
 from saque import Saque
 from deposito import Deposito
 from saldo import Saldo
+from transferencia import Transferencia
 import time
 
 
@@ -35,7 +36,9 @@ def menu():
         elif opcao == 2:
             saque=Saque()
             saque.sacar()
-        # elif opcao == 3:
+        elif opcao == 3:
+            transferencia=Transferencia()
+            transferencia.transferir()
             
         elif opcao == 4:
             saldo=Saldo()
