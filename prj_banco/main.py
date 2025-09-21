@@ -3,8 +3,8 @@ import json
 from cadastro import Pessoa
 from saque import Saque
 from deposito import Deposito
-from saldo import Saldo
 from transferencia import Transferencia
+from saldo import Saldo
 import time
 
 
