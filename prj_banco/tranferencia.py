@@ -1,4 +1,3 @@
-# transferencia.py
 import json
 import os
 import time
@@ -8,7 +7,7 @@ class Transferencia:
         self.arquivo_json = arquivo_json
         self.dados = self._carregar_dados()
 
-    def _carregar_dados(self):
+    def _carregar_dados(self):        
         if os.path.exists(self.arquivo_json):
             with open(self.arquivo_json, "r", encoding="utf-8") as f:
                 try:
@@ -43,7 +42,7 @@ class Transferencia:
             return False
 
         print(f"Remetente: {remetente['nome']} - Saldo: R$ {remetente.get('saldo', 0):.2f}")
-        nome_dest = input("Nome do destinatário: ").capitalize()
+        nome_dest = input("Nome do destinatário: ")
         destinatario = self._encontrar_por_nome(nome_dest)
         if not destinatario:
             print("Destinatário não encontrado.")
