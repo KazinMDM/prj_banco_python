@@ -28,10 +28,9 @@ def menu():
         print("0 - Sair")
 
         opcao = int(input("Digite a opção desejada: "))
-        if opcao == 1:  # conecta ao arquivo de dados
-            deposito=Deposito.depositar()  # chama a função de depósito
-
-    
+        if opcao == 1:
+            deposito=Deposito()
+            deposito.depositar()
         elif opcao == 2:
             saque=Saque()
             saque.sacar()

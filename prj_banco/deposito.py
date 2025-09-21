@@ -23,7 +23,6 @@ class Deposito:
     
     
     def depositar(self):
-        print("Saldo atual:", pessoa["deposito"])
         valor_deposito = float(input("Digite o valor do deposito "))
         time.sleep(1)
         senha_correta = input("Digite a senha correta: ")
@@ -44,7 +43,7 @@ class Deposito:
         print("Realizando deposito...")
         time.sleep(1)
         for pessoa in self.dados:
-            pessoa["deposito"] -= valor_deposito
+            pessoa["saldo"] += valor_deposito
             time.sleep(1)
             print("Deposito realizado com sucesso!")
             time.sleep(1)

@@ -23,7 +23,6 @@ class Saque:
     
     
     def sacar(self):
-        print("Saldo atual:", pessoa["saldo"])
         valor_saque = float(input("Digite o valor do saque: "))
         time.sleep(1)
         senha_correta = input("Digite a senha correta: ")
