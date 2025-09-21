@@ -26,5 +26,19 @@
             "estado": "Califórnia"
         },
         "saldo": 0.0
+    },
+    {
+        "nome": "Zezin",
+        "data_nasc": "15/08/2008",
+        "cpf": "98765432100",
+        "senha": "123456",
+        "endereco": {
+            "rua": "v",
+            "numero": 2,
+            "bairro": "ag 10",
+            "cep": "55555-111",
+            "estado": "ba"
+        },
+        "saldo": 0.0
     }
 ]
