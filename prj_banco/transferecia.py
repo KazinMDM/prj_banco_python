@@ -28,7 +28,7 @@ class Transferencia:
         print("\n=== Transferência Bancária ===")
 
         # Identificação do remetente
-        senha_origem = input("Digite sua senha (remetente): ")
+        senha_origem = input("Digite sua senha (usuário/remetente): ")
         remetente = None
         for pessoa in self.dados:
             if pessoa["senha"] == senha_origem:
@@ -38,10 +38,8 @@ class Transferencia:
         if not remetente:
             print("Usuário remetente não encontrado ou senha incorreta.")
             return False
-
         print(f"Remetente: {remetente['nome']} - Saldo atual: R$ {remetente['saldo']:.2f}")
 
-        # Identificação do destinatário
         nome_destinatario = input("Digite o nome do destinatário: ").capitalize()
         destinatario = None
         for pessoa in self.dados:
@@ -53,7 +51,6 @@ class Transferencia:
             print("Destinatário não encontrado.")
             return False
 
-        # Valor da transferência
         try:
             valor = float(input("Digite o valor da transferência: R$ "))
         except ValueError:
@@ -68,7 +65,6 @@ class Transferencia:
             print("Saldo insuficiente.")
             return False
 
-        # Processando transferência
         time.sleep(1)
         print("Processando transferência...")
         remetente["saldo"] -= valor
