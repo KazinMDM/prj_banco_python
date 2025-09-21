@@ -12,5 +12,19 @@
             "estado": "Bahia"
         },
         "saldo": 551.5
+    },
+    {
+        "nome": "Zezin",
+        "data_nasc": "15/08/2008",
+        "cpf": "98765432100",
+        "senha": "123456",
+        "endereco": {
+            "rua": "v",
+            "numero": 6,
+            "bairro": "ag 10",
+            "cep": "11111-111",
+            "estado": "ba"
+        },
+        "saldo": 0.0
     }
 ]
