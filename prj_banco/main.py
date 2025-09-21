@@ -26,19 +26,11 @@ def menu():
         print("4 - Saldo")
         print("3 - Extrato")
         print("0 - Sair")
-
+        
         opcao = int(input("Digite a opção desejada: "))
-<<<<<<< HEAD
         if opcao == 1:
             deposito=Deposito()
             deposito.depositar()
-=======
-        if opcao == 1:
-                deposito = Deposito()  
-                deposito.depositar() 
-
-    
->>>>>>> 0e5fcad6cad8b6d3804d5611f6c6c46f933dbd3c
         elif opcao == 2:
             saque=Saque()
             saque.sacar()
