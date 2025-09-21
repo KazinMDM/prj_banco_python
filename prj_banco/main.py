@@ -28,9 +28,9 @@ def menu():
         print("0 - Sair")
 
         opcao = int(input("Digite a opção desejada: "))
-        if opcao == 1:  # conecta ao arquivo de dados
-                deposito = Deposito()   # cria o objeto
-                deposito.depositar()    # chama o método  # chama a função de depósito
+        if opcao == 1:  
+                deposito = Deposito()   
+                deposito.depositar()
 
     
         elif opcao == 2:
