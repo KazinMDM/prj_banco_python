@@ -13,41 +13,26 @@ class Pessoa:
         self.__cep = cep
         self.__estado = estado
     
-    @property
-    def nome(self):
-        return self.__nome
-
-    @property
-    def data_nasc(self):
-        return self.__data_nasc
-
-    @property
-    def cpf(self):
-        return self.__cpf
-
-    @property
-    def senha(self):
-        return self.__senha
-    @senha.setter
-    def senha(self, senha):
-        self.__senha = senha
-
     @classmethod
     def cadastro(cls):
         print("Cadastro de pessoa")
         nome = input("Digite o nome:\n--> ").capitalize()
+
         data_nasc = input("Digite a data_nasc [dd/mm/aaaa]:\n--> ")
         while len(data_nasc) != 10:
             print("Data inválida")
             data_nasc = input("Digite a data_nasc [dd/mm/aaaa]:\n--> ")
+
         cpf = input("Digite o CPF:\n--> ")
         while len(cpf) != 11:
             print("CPF inválido")
             cpf = input("Digite o CPF:\n--> ")
+
         senha = input("Digite a senha [6 digitos]:\n--> ")
         while len(senha) != 6:
             print("Senha inválida")
             senha = input("Digite a senha [6 digitos]:\n--> ")
+
         rua = input("Digite a rua:\n--> ")
         numero = int(input("Digite o numero:\n--> "))
         bairro = input("Digite o bairro:\n--> ")
