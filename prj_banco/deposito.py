@@ -13,5 +13,6 @@ class Deposito:
             print("=== Operação falhou! O valor informado é inválido. ===\n")
 
 
-d = Deposito()   
-d.depositar(float(input("Digite o valor a ser depositado: ")))
+# d = Deposito()   
+# d.depositar(float(input("Digite o valor a ser depositado: ")))
+# só retire o comentário caso vc retirar esse objeto que você criou e o input, ta entranto antes do main.

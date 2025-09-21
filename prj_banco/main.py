@@ -8,9 +8,11 @@ def autenticar(nome, senha, arquivo="cadastro.json"):
     if os.path.exists(arquivo):
         with open(arquivo, "r", encoding="utf-8") as f:
             dados = json.load(f)
-            if nome in dados and dados[nome]["senha"] == senha:
-                return True
-    return False
+            for pessoa in dados:
+                if pessoa["nome"] == nome and pessoa["senha"] == senha:
+                    return True
+    else:        
+        return False
 
 def menu():
     while True:
@@ -24,14 +26,17 @@ def menu():
 
         opcao = int(input("Digite a opção desejada: "))
         if opcao == 1:
-            Deposito.depositar()
+            deposito=Deposito()
+    
         elif opcao == 2:
-            Saque.saque()
+            saque=Saque()
+            saque.sacar()
         # elif opcao == 3:
             
         # elif opcao == 4:
             
         elif opcao == 0:
+            print("Sessão encerrada com sucesso!")
             break
 
 def menu_inicial():
@@ -47,11 +52,13 @@ def menu_inicial():
         elif opcao == 2:
             nome = input("Digite o nome: ")
             senha = input("Digite a senha: ")
-            if autenticar(nome, senha) == True:
+            verificar = autenticar(nome, senha)
+            if verificar == True:
                 menu()
             else:
                 print("Nome ou senha incorretos. Tente novamente.")
         elif opcao == 0:
+            print("Saída encerrada com sucesso!")
             break
 
 if __name__ == "__main__":
