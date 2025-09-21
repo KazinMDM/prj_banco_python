@@ -11,11 +11,7 @@
             "cep": "12345-400",
             "estado": "Bahia"
         },
-<<<<<<< HEAD
-        "saldo": 1000444.5
-=======
-        "saldo": 551.5
->>>>>>> 06d459fa6f6c0bd6218324fa3451f59da290fa05
+        "saldo": 651.5
     },
     {
         "nome": "Maria",
