@@ -1,0 +1,53 @@
+[
+    {
+        "nome": "Kayke",
+        "data_nasc": "05/12/2008",
+        "cpf": "12345678900",
+        "telefone": "99999999999",
+        "senha": "123456",
+        "endereco": {
+            "rua": "rua da água",
+            "numero": 77,
+            "bairro": "faz favô",
+            "cep": "12345-000",
+            "estado": "Bahia"
+        },
+        "saldo": 200.0,
+        "extrato": [
+            {
+                "tipo": "Saque",
+                "data": "21/09/2025 22:54:51",
+                "valor": -300.0
+            },
+            {
+                "tipo": "Transferência enviada",
+                "data": "21/09/2025 22:55:22",
+                "valor": -500.0,
+                "para": "Éverton"
+            }
+        ]
+    },
+    {
+        "nome": "Éverton",
+        "data_nasc": "15/08/2008",
+        "cpf": "98765432100",
+        "telefone": "88888888888",
+        "senha": "654321",
+        "endereco": {
+            "rua": "num sei",
+            "numero": 0,
+            "bairro": "num sei",
+            "cep": "54321-000",
+            "estado": "Bahia"
+        },
+        "saldo": 500.0,
+        "extrato": [
+            {
+                "tipo": "Transferência recebida",
+                "data": "21/09/2025 22:55:22",
+                "valor": 500.0,
+                "de": "Kayke"
+            }
+        ]
+    }
+]

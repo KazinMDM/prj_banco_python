@@ -1,11 +1,13 @@
 import json
 import os
 import time
+import datetime
 
 class Transferencia:
-    def __init__(self, arquivo_json="cadastro.json"):
+    def __init__(self, nome,arquivo_json="cadastro.json"):
         self.arquivo_json = arquivo_json
         self.dados = self.carregar_dados()
+        self.nome = nome
 
     def carregar_dados(self):
         if os.path.exists(self.arquivo_json):
@@ -22,15 +24,20 @@ class Transferencia:
         print("Dados salvos com sucesso!")
 
     def transferir(self):
-        print("\n=== Transferência Bancária ===")
+        print("\n============= Transferência Bancária ===============")
 
-        senha_origem = input("Digite sua senha de acesso: ")
+        senha_usuario = input("Digite a senha do usuário: ")
+        time.sleep(1)
         remetente = None
-        for pessoa in self.dados:
-            if pessoa["senha"] == senha_origem:
-                remetente = pessoa
-                break
-
+        while remetente is None:
+            for pessoa in self.dados:
+                if pessoa["nome"] == self.nome:
+                    if pessoa["senha"] == senha_usuario:
+                        remetente = pessoa  
+                        break
+                    else:
+                        print("Senha incorreta. Tente novamente.")
+                        senha_usuario = input("Digite a senha correta: ")
         if not remetente:
             print("Usuário não encontrado ou senha incorreta.")
             return False
@@ -48,27 +55,44 @@ class Transferencia:
             return False
 
         try:
-            valor = float(input("Digite o valor da transferência: R$ "))
+            valor_transf = float(input("Digite o valor da transferência: R$ "))
         except ValueError:
             print("Valor inválido.")
             return False
 
-        if valor <= 0:
+        if valor_transf <= 0:
             print("O valor deve ser positivo.")
             return False
 
-        if remetente["saldo"] < valor:
+        if remetente["saldo"] < valor_transf:
             print("Saldo insuficiente.")
             return False
 
         time.sleep(1)
         print("Processando transferência...")
-        remetente["saldo"] -= valor
-        destinatario["saldo"] += valor
+        remetente["saldo"] -= valor_transf
+        destinatario["saldo"] += valor_transf
+
+        movi_remetente = {
+            "tipo": "Transferência enviada",
+            "data": datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            "valor": -valor_transf,
+            "para": destinatario["nome"]
+        }
+        remetente["extrato"].append(movi_remetente)
+
+        movi_destinatario = {
+            "tipo": "Transferência recebida",
+            "data": datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            "valor": valor_transf,
+            "de": remetente["nome"]
+        }
+        destinatario["extrato"].append(movi_destinatario)
 
         self.salvar_dados()
-
-        print(f"\nTransferência de R$ {valor} realizada com sucesso!")
+        time.sleep(1)
+        print(f"\nTransferência de R$ {valor_transf} realizada com sucesso!")
+        time.sleep(1)
         print(f"Novo saldo de {remetente['nome']}: R$ {remetente['saldo']}")
-
+        time.sleep(1.5)
         return True

@@ -1,12 +1,14 @@
 import os
 import json
+import time
 from cadastro import Pessoa
 from saque import Saque
 from deposito import Deposito
 from saldo import Saldo
 from transferecia import Transferencia
 from dados import Dados
-import time
+from extrato import Extrato
+
 
 usuario_logado = None
 
@@ -40,13 +42,16 @@ def menu(nome):
             saque=Saque(nome)
             saque.sacar()
         elif opcao == 3:
-            transferencia=Transferencia()
+            transferencia=Transferencia(nome)
             transferencia.transferir()
         elif opcao == 4:
             saldo=Saldo(nome)
         elif opcao == 5:
             dados=Dados(nome)
             dados.menu_dados()
+        elif opcao == 6:
+            extrato = Extrato(nome)
+            extrato.visualizar_extrato()            
         elif opcao == 0:
             time.sleep(2)
             print("Sessão encerrada com sucesso!")

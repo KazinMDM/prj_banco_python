@@ -27,7 +27,7 @@ class Deposito:
     def depositar(self):
         valor_deposito = float(input("Digite o valor do deposito: "))
         time.sleep(1)
-        senha_usuario = input("Digite a senha correta: ")
+        senha_usuario = input("Digite a senha do usuário: ")
 
         pessoa_encontrada = None
         while pessoa_encontrada is None:
@@ -56,4 +56,6 @@ class Deposito:
         pessoa_encontrada["extrato"].append(movi_deposito)
         self.salvar_dados(self.dados)
         print("Deposito realizado com sucesso!")
+        time.sleep(1)
         print("Saldo atual:", pessoa_encontrada["saldo"])
+        time.sleep(1.5)

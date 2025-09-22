@@ -1,7 +1,7 @@
 import json
 class Pessoa:
     __arquivo = "cadastro.json"
-    def __init__(self, nome, data_nasc, cpf, senha, rua, numero, bairro, cep,estado, saldo=0.0):
+    def __init__(self, nome, data_nasc, cpf, telefone, senha, rua, numero, bairro, cep,estado, saldo=0.0):
         self.__nome = nome
         self.__data_nasc = data_nasc
         self.__cpf = cpf
@@ -28,6 +28,11 @@ class Pessoa:
             print("CPF inválido")
             cpf = input("Digite o CPF:\n--> ")
 
+        telefone = input("Digite o telefone:\n--> ")
+        while len(telefone) != 11:
+            print("Telefone inválido")
+            telefone = input("Digite o telefone:\n--> ")
+
         senha = input("Digite a senha [6 digitos]:\n--> ")
         while len(senha) != 6:
             print("Senha inválida")
@@ -45,6 +50,7 @@ class Pessoa:
             "nome": nome,
             "data_nasc": data_nasc,
             "cpf": cpf,
+            "telefone": telefone,
             "senha": senha,
             "endereco": {
                 "rua": rua,

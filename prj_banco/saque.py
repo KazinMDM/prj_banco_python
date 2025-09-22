@@ -25,7 +25,6 @@ class Saque:
         valor_saque = float(input("Digite o valor do saque: "))
         time.sleep(1)
 
-        # localizar o usuário pelo nome
         pessoa_encontrada = None
         for pessoa in self.dados:
             if pessoa["nome"] == self.nome:
@@ -36,7 +35,6 @@ class Saque:
             print("Usuário não encontrado!")
             return False
         
-        # valida senha até acertar
         senha_usuario = input("Digite a senha correta: ")
         while senha_usuario != pessoa_encontrada["senha"]:
             print("Senha incorreta. Tente novamente.")
@@ -48,11 +46,9 @@ class Saque:
         print("Realizando saque...")
         time.sleep(1)
 
-        # verificar saldo
         if pessoa_encontrada["saldo"] >= valor_saque:
             pessoa_encontrada["saldo"] -= valor_saque
 
-            # registrar extrato
             movi_saque = {
                 "tipo": "Saque",
                 "data": datetime.datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
@@ -62,7 +58,9 @@ class Saque:
 
             self.salvar_dados(self.dados)
             print("Saque realizado com sucesso!")
+            time.sleep(1)
             print("Saldo atual:", pessoa_encontrada["saldo"])
+            time.sleep(1.5)
             return True
         else:
             print("Saldo insuficiente para saque.")
