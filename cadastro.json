@@ -12,20 +12,8 @@
             "cep": "12345-000",
             "estado": "Bahia"
         },
-        "saldo": 200.0,
-        "extrato": [
-            {
-                "tipo": "Saque",
-                "data": "21/09/2025 22:54:51",
-                "valor": -300.0
-            },
-            {
-                "tipo": "Transferência enviada",
-                "data": "21/09/2025 22:55:22",
-                "valor": -500.0,
-                "para": "Éverton"
-            }
-        ]
+        "saldo": 0.0,
+        "extrato": []
     },
     {
         "nome": "Éverton",
@@ -40,14 +28,7 @@
             "cep": "54321-000",
             "estado": "Bahia"
         },
-        "saldo": 500.0,
-        "extrato": [
-            {
-                "tipo": "Transferência recebida",
-                "data": "21/09/2025 22:55:22",
-                "valor": 500.0,
-                "de": "Kayke"
-            }
-        ]
+        "saldo": 0.0,
+        "extrato": []
     }
 ]
