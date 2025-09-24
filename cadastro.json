@@ -12,8 +12,25 @@
             "cep": "12345-000",
             "estado": "Bahia"
         },
-        "saldo": 0.0,
-        "extrato": []
+        "saldo": 450.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "24/09/2025 08:47:08",
+                "valor": 1000.0
+            },
+            {
+                "tipo": "Saque",
+                "data": "24/09/2025 08:47:29",
+                "valor": -200.0
+            },
+            {
+                "tipo": "Transferência enviada",
+                "data": "24/09/2025 08:47:57",
+                "valor": -350.0,
+                "para": "Éverton"
+            }
+        ]
     },
     {
         "nome": "Éverton",
@@ -28,7 +45,14 @@
             "cep": "54321-000",
             "estado": "Bahia"
         },
-        "saldo": 0.0,
-        "extrato": []
+        "saldo": 350.0,
+        "extrato": [
+            {
+                "tipo": "Transferência recebida",
+                "data": "24/09/2025 08:47:57",
+                "valor": 350.0,
+                "de": "Kayke"
+            }
+        ]
     }
 ]
