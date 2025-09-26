@@ -54,5 +54,32 @@
                 "de": "Kayke"
             }
         ]
+    },
+    {
+        "nome": "Hebert lemuel",
+        "data_nasc": "06/07/2007",
+        "cpf": "09125907506",
+        "telefone": "77991273980",
+        "senha": "123456",
+        "endereco": {
+            "rua": "alagoas",
+            "numero": 942,
+            "bairro": "centro",
+            "cep": "47630-011",
+            "estado": "BAHIA"
+        },
+        "saldo": 1000.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "25/09/2025 08:41:44",
+                "valor": 1000.0
+            },
+            {
+                "tipo": "Saque",
+                "data": "25/09/2025 08:42:15",
+                "valor": -0.0
+            }
+        ]
     }
 ]
