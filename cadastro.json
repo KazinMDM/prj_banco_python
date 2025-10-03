@@ -12,6 +12,7 @@
             "cep": "12345-000",
             "estado": "Bahia"
         },
+<<<<<<< HEAD
         "saldo": 20.0,
         "extrato": [
             {
@@ -29,6 +30,25 @@
                 "tipo": "Saque",
                 "data": "22/09/2025 07:31:48",
                 "valor": -30.0
+=======
+        "saldo": 450.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "24/09/2025 08:47:08",
+                "valor": 1000.0
+            },
+            {
+                "tipo": "Saque",
+                "data": "24/09/2025 08:47:29",
+                "valor": -200.0
+            },
+            {
+                "tipo": "Transferência enviada",
+                "data": "24/09/2025 08:47:57",
+                "valor": -350.0,
+                "para": "Éverton"
+>>>>>>> ff76cce5091f31720b45cbcaf66af75ef38b95ae
             }
         ]
     },
@@ -45,6 +65,7 @@
             "cep": "54321-000",
             "estado": "Bahia"
         },
+<<<<<<< HEAD
         "saldo": 50.0,
         "extrato": [
             {
@@ -54,5 +75,43 @@
                 "de": "Kayke"
             }
         ]
+=======
+        "saldo": 350.0,
+        "extrato": [
+            {
+                "tipo": "Transferência recebida",
+                "data": "24/09/2025 08:47:57",
+                "valor": 350.0,
+                "de": "Kayke"
+            }
+        ]
+    },
+    {
+        "nome": "Hebert lemuel",
+        "data_nasc": "06/07/2007",
+        "cpf": "09125907506",
+        "telefone": "77991273980",
+        "senha": "123456",
+        "endereco": {
+            "rua": "alagoas",
+            "numero": 942,
+            "bairro": "centro",
+            "cep": "47630-011",
+            "estado": "BAHIA"
+        },
+        "saldo": 1000.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "25/09/2025 08:41:44",
+                "valor": 1000.0
+            },
+            {
+                "tipo": "Saque",
+                "data": "25/09/2025 08:42:15",
+                "valor": -0.0
+            }
+        ]
+>>>>>>> ff76cce5091f31720b45cbcaf66af75ef38b95ae
     }
 ]
