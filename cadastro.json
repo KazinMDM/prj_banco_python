@@ -12,7 +12,30 @@
             "cep": "12345-000",
             "estado": "Bahia"
         },
+<<<<<<< HEAD
         "saldo": 910.0,
+=======
+<<<<<<< HEAD
+        "saldo": 20.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "22/09/2025 07:27:50",
+                "valor": 100.0
+            },
+            {
+                "tipo": "Transferência enviada",
+                "data": "22/09/2025 07:28:13",
+                "valor": -50.0,
+                "para": "Éverton"
+            },
+            {
+                "tipo": "Saque",
+                "data": "22/09/2025 07:31:48",
+                "valor": -30.0
+=======
+        "saldo": 450.0,
+>>>>>>> f903819449d70ad73b9af01501afbc5ac338e997
         "extrato": [
             {
                 "tipo": "Depósito",
@@ -29,6 +52,7 @@
                 "data": "24/09/2025 08:47:57",
                 "valor": -350.0,
                 "para": "Éverton"
+<<<<<<< HEAD
             },
             {
                 "tipo": "Depósito",
@@ -45,6 +69,9 @@
                 "data": "26/09/2025 08:04:27",
                 "valor": 100.0,
                 "de": "Éverton"
+=======
+>>>>>>> ff76cce5091f31720b45cbcaf66af75ef38b95ae
+>>>>>>> f903819449d70ad73b9af01501afbc5ac338e997
             }
         ]
     },
@@ -61,7 +88,22 @@
             "cep": "54321-000",
             "estado": "Bahia"
         },
+<<<<<<< HEAD
         "saldo": 300.0,
+=======
+<<<<<<< HEAD
+        "saldo": 50.0,
+        "extrato": [
+            {
+                "tipo": "Transferência recebida",
+                "data": "22/09/2025 07:28:13",
+                "valor": 50.0,
+                "de": "Kayke"
+            }
+        ]
+=======
+        "saldo": 350.0,
+>>>>>>> f903819449d70ad73b9af01501afbc5ac338e997
         "extrato": [
             {
                 "tipo": "Transferência recebida",
@@ -113,6 +155,7 @@
                 "valor": -0.0
             }
         ]
+<<<<<<< HEAD
     },
     {
         "nome": "Kayke",
@@ -151,5 +194,8 @@
                 "valor": 600.0
             }
         ]
+=======
+>>>>>>> ff76cce5091f31720b45cbcaf66af75ef38b95ae
+>>>>>>> f903819449d70ad73b9af01501afbc5ac338e997
     }
 ]
