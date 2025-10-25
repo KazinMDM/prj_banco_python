@@ -129,5 +129,27 @@
         },
         "saldo": 0.0,
         "extrato": []
+    },
+    {
+        "nome": "Vivianiunha santos",
+        "data_nasc": "01/12/2007",
+        "cpf": "05785163598",
+        "telefone": "98765432100",
+        "senha": "123123",
+        "endereco": {
+            "rua": "b",
+            "numero": 60,
+            "bairro": "ag 15",
+            "cep": "46445-000",
+            "estado": "bahia"
+        },
+        "saldo": 600.0,
+        "extrato": [
+            {
+                "tipo": "Depósito",
+                "data": "30/09/2025 09:15:49",
+                "valor": 600.0
+            }
+        ]
     }
 ]
