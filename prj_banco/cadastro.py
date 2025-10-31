@@ -67,20 +67,3 @@ class Pessoa:
         cls.salvar_pessoas(pessoas)
         
         
-
-    @classmethod
-    def carregar_pessoas(cls):
-        try:
-            with open(cls.__arquivo, "r", encoding="utf-8") as arquivo:
-                pessoas = json.load(arquivo)
-                return pessoas
-        except FileNotFoundError:
-            return []
-
-    @classmethod
-    def salvar_pessoas(cls, pessoas):
-        with open(cls.__arquivo, "w", encoding="utf-8") as arquivo:
-            json.dump(pessoas, arquivo, ensure_ascii=False, indent=4)
-            arquivo.close()
-        print("Pessoas salvas com sucesso!")
-
